@@ -42,6 +42,9 @@ try:
         title = result["snippet"]["title"]
         decoded_title = html.unescape(title)
 
+        if "Rock Climber's Improvement Checklist" not in decoded_title and "Climb Harder on Crimps" not in decoded_title:
+            continue
+
         video_id = result["id"]["videoId"]
         video_url = f"https://www.youtube.com/watch?v={video_id}"
 
