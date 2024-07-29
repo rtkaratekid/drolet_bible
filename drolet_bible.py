@@ -35,8 +35,8 @@ try:
     # sort them by the date they were published
     search_results.sort(key=lambda x: x["snippet"]["publishedAt"])
 
-    html_content = "<html><head><title>Drolet Bible</title></head><body>"
-    html_content += "<h1>Drolet Bible</h1>"  # Add this line to display the title in the body
+    # html_content = "<html><head><title>Drolet Bible</title></head><body>"
+    html_content = "<body><h1>Drolet Bible</h1>"  # Add this line to display the title in the body
 
     for result in search_results:
         title = result["snippet"]["title"]
