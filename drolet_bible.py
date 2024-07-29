@@ -12,7 +12,7 @@ import googleapiclient.discovery
 # Set up the YouTube Data API client
 api_service_name = "youtube"
 api_version = "v3"
-api_key = ""  # Replace with your own API key
+api_key = "AIzaSyBD0huFzOabNO9IpMV3N1-YzHWJiIh8v0s"  # Replace with your own API key
 
 youtube = googleapiclient.discovery.build(api_service_name, api_version, developerKey=api_key)
 
@@ -37,6 +37,7 @@ try:
 
     # html_content = "<html><head><title>Drolet Bible</title></head><body>"
     html_content = "<body><h1>Drolet Bible</h1>"  # Add this line to display the title in the body
+    html_content += "<img src='cult.jpg' alt='Cult Image'>"  # Add this line to include the image
 
     for result in search_results:
         title = result["snippet"]["title"]
