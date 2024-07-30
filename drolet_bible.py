@@ -49,7 +49,7 @@ try:
         video_id = result["id"]["videoId"]
         video_url = f"https://www.youtube.com/watch?v={video_id}"
 
-        html_content += f"<h2><a href='{video_url}'>{decoded_title}</a></h2>"
+        html_content += f"<h2><a href='{video_url}' target='_blank'>{decoded_title}</a></h2>"
         video_id = result["id"]["videoId"]
         video_response = youtube.videos().list(
             part="snippet",
