@@ -66,7 +66,8 @@ try:
             if len(chapter_parts) >= 2:
                 chapter_title = " ".join(chapter_parts[1:])
                 chapter_timestamp = chapter_parts[0]
-                chapter_url = f"{video_url}&t={chapter_timestamp}"
+                minutes, seconds = chapter_timestamp.split(":")
+                chapter_url = f"{video_url}&t={minutes}m{seconds}s"
                 html_content += f"<li><a href='{chapter_url}'>{chapter_title}</a></li>"
         html_content += "</ol>"
 
