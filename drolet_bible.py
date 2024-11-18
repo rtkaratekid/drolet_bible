@@ -2,23 +2,18 @@
 import html
 import markdown
 from googleapiclient.errors import HttpError
-
-#!/usr/bin/python3
-
-# fetch all the captions from the videos in the NateDrolet youtube channel where the title of the video starts with "Rock Climber's Improvement Checklist"
-# and save them in a text file
 import googleapiclient.discovery
 
 # Set up the YouTube Data API client
 api_service_name = "youtube"
 api_version = "v3"
-api_key = ""  # Replace with your own API key
+api_key = "" # Replace with your own API key
 
 youtube = googleapiclient.discovery.build(api_service_name, api_version, developerKey=api_key)
 
 # Define the search query parameters
-channel_id = "UCBYi9loicyfSythDfUKWmfA"  # Replace with the channel ID of NateDrolet
-search_query = "Rock Climber's Improvement Checklist"
+channel_id = "UCBYi9loicyfSythDfUKWmfA"
+search_query = "Climber's Progression Series"  # Replace with the search query to find the videos
 
 # Fetch all the videos from the channel
 try:
@@ -43,7 +38,7 @@ try:
         title = result["snippet"]["title"]
         decoded_title = html.unescape(title)
 
-        if "Rock Climber's Improvement Checklist" not in decoded_title and "Climb Harder on Crimps" not in decoded_title:
+        if "Climber's Progression Series" not in decoded_title and "Rock Climber's Improvement Checklist" not in decoded_title and "Climb Harder on Crimps" not in decoded_title:
             continue
 
         video_id = result["id"]["videoId"]
