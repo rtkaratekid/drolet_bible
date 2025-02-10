@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 import html
 import markdown
+import os
 from googleapiclient.errors import HttpError
 import googleapiclient.discovery
 
 # Set up the YouTube Data API client
 api_service_name = "youtube"
 api_version = "v3"
-api_key = "" # Replace with your own API key
+api_key = os.environ["YOUTUBE_API_KEY"]
 
 youtube = googleapiclient.discovery.build(api_service_name, api_version, developerKey=api_key)
 
